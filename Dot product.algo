@@ -1,0 +1,38 @@
+FUNCTION Dot_product(V1[N],V2[N]) : INTEGER
+VAR
+product : INTEGER:=0 ;
+i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO N-1 STEP 1  DO
+        product:=product+V1[i]*V2[i] ; 
+    END_FOR
+    RETURN product ;
+END
+
+ALGORITHM PRODUCTS
+VAR
+    V1:  ARRAY_OF INTEGER[N];
+    V2:  ARRAY_OF INTEGER[N];
+    i :INTEGER;
+    N : INTEGER;
+
+BEGIN
+    write ("give N");
+    Read(N);
+
+    FOR i FROM 0 TO N-1 STEP 1  DO
+        write ("give element");
+        Read(V1[i]);
+    END_FOR
+
+     FOR i FROM 0 TO N-1 STEP 1  DO
+        write ("give element");
+        Read(V2[i]);
+    END_FOR
+
+VAR x:=Dot_product(V1[N],V2[N]);
+IF (x=0) THEN
+    write("v1 and v2 are orthogonal ");
+END_IF
+
+END
